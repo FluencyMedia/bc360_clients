@@ -8,5 +8,9 @@ label: "BC360 - Client Management"
 
 
 explore: arch_client_orgs {
-  label: "Clients"
+  label: "Client Architecture"
+}
+
+explore: arch_client_orgs_admin {
+  label: "Client Architecture [ADMIN]"
 }

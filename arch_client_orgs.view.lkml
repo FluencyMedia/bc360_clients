@@ -14,7 +14,7 @@ view: arch_client_orgs {
             ac.organization,
             ac.org_short,
             ac.last_updated
-         FROM bc360_arch_clients.arch_clients ac;;
+         FROM bc360_arch_clients.arch_client_orgs ac;;
   }
 
   ##########  DIMENSIONS  ##########
