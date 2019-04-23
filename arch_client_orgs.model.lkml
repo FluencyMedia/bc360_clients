@@ -6,7 +6,7 @@ include: "arch_client_orgs_admin.view.lkml"
 
 label: "BC360 - Client Management"
 
-persist_with: dg_bc360_clients
+# persist_with: dg_bc360_clients
 
 explore: arch_client_orgs {
   label: "Client Architecture"
