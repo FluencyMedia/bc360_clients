@@ -2,7 +2,7 @@ view: arch_client_orgs {
   view_label: "Client Architecture"
 
   derived_table: {
-     datagroup_trigger: dg_bc360_clients
+    # datagroup_trigger: dg_bc360_clients
 
     sql:  SELECT
             ac.row_num,
