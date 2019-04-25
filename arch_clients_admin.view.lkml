@@ -1,8 +1,8 @@
-include: "arch_client_orgs.view.lkml"
+include: "arch_clients.view.lkml"
 
 view: arch_client_orgs_admin {
   label: "BC360 - Client Architecture [ADMIN]"
-  extends: [arch_client_orgs]
+  # extends: [arch_clients
 
   ##########  METADATA  ##########
 
