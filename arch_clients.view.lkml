@@ -1,4 +1,4 @@
-view: arch_client_orgs {
+view: arch_clients {
   view_label: "Client Architecture"
 
   derived_table: {

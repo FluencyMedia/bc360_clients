@@ -7,6 +7,6 @@ label: "BC360 - Admin"
 
 # persist_with: dg_bc360_clients
 
-explore: arch_client_orgs_admin {
+explore: arch_clients_admin {
   label: "Client Architecture [ADMIN]"
 }
