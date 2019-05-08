@@ -18,6 +18,17 @@ view: arch_clients {
 
   ##########  DIMENSIONS  ##########
 
+  dimension: row_num {
+    view_label: "Z - Metadata"
+    label: "Row Index"
+
+    primary_key: yes
+    hidden: yes
+
+    type: number
+    sql: ${TABLE}.row_num ;;
+  }
+
   dimension: client {
     view_label: "1. Client/Account"
     label: "Client Account"
@@ -72,7 +83,6 @@ view: arch_clients {
   }
 
   dimension: organization_uid {
-    primary_key: yes
     hidden: yes
 
     type: number

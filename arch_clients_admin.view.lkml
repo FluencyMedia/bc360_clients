@@ -64,7 +64,7 @@ view: arch_clients_admin {
     label: "Organization UID [Arch_Client_Orgs]"
     description: "Hashed UID for Organization Within MP360 Client Account"
 
-    primary_key: yes
+    # primary_key: yes
     hidden: no
 
     type: string
