@@ -9,7 +9,7 @@ view: arch_clients {
             CAST(ac.client_id AS INT64) client_id,
             CAST(ac.client_uid AS INT64) client_uid,
             CAST(ac.organization_id AS INT64) organization_id,
-            CAST(ac.organization_uid AS INT64 organization_uid),
+            CAST(ac.organization_uid AS INT64) organization_uid,
             ac.client,
             ac.organization,
             ac.org_short
