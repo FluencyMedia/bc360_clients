@@ -5,15 +5,14 @@ view: arch_clients {
     # datagroup_trigger: dg_bc360_clients
 
     sql:  SELECT
-            ac.row_num,
-            ac.client_id,
-            ac.client_uid,
-            ac.organization_id,
-            ac.organization_uid,
+            ROW_NUMBER() OVER () row_num,
+            CAST(ac.client_id AS INT64) client_id,
+            CAST(ac.client_uid AS INT64) client_uid,
+            CAST(ac.organization_id AS INT64) organization_id,
+            CAST(ac.organization_uid AS INT64 organization_uid),
             ac.client,
             ac.organization,
-            ac.org_short,
-            ac.last_updated
+            ac.org_short
          FROM arch_clients.arch_client_orgs ac;;
   }
 
@@ -51,7 +50,7 @@ view: arch_clients {
   dimension: client_id {
     hidden: yes
 
-    type: string
+    type: number
 
     sql: ${TABLE}.client_id ;;
   }
@@ -59,7 +58,7 @@ view: arch_clients {
   dimension: client_uid {
     hidden: yes
 
-    type: string
+    type: number
 
     sql: ${TABLE}.client_uid ;;
   }
@@ -67,7 +66,7 @@ view: arch_clients {
   dimension: organization_id {
     hidden: yes
 
-    type: string
+    type: number
 
     sql: ${TABLE}.organization_id ;;
   }
@@ -76,7 +75,7 @@ view: arch_clients {
     primary_key: yes
     hidden: yes
 
-    type: string
+    type: number
 
     sql: ${TABLE}.organization_uid ;;
   }
