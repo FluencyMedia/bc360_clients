@@ -11,3 +11,7 @@ explore: arch_clients_admin {
   label: "Client Architecture [ADMIN]"
   hidden: yes
 }
+
+explore: flat_clients_admin {
+  label: "Client Architecture [FLAT]"
+}
