@@ -9,9 +9,8 @@ label: "BC360 - Admin"
 
 explore: arch_clients_admin {
   label: "Client Architecture [ADMIN]"
-  hidden: yes
 }
 
-explore: flat_clients_admin {
-  label: "Client Architecture [FLAT]"
+explore: arch_clients {
+  label: "Client Architecture [MAIN]"
 }

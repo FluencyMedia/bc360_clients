@@ -1,28 +1,26 @@
-include: "arch_clients.view.lkml"
-
 view: arch_clients_admin {
-  label: "BC360 - Client Architecture [ADMIN]"
-  extends: [arch_clients]
+  view_label: "Client Architecture"
 
-  ##########  METADATA  ##########
+  # sql_table_name: bc360_arch_clients.arch_clients ;;
 
-  dimension: row_num {
-    view_label: "Z - Metadata"
-    group_label: "Database IDs"
-    label: "Client ID [Arch_Client_Orgs]"
-    description: "ID for Primary BC360 Client Account"
+  derived_table: {
+    # datagroup_trigger: dg_bc360_bq
 
-    hidden: no
-
-    type: number
-
-    sql: ${TABLE}.row_num ;;
+    sql:  SELECT
+           ac.client_id,
+           ac.organization_id,
+           ac.client,
+           ac.organization,
+           ac.org_short
+         FROM flat_arch.flat_clients ac;;
   }
+
+##########  METADATA  ##########
 
   dimension: client_id {
     view_label: "Z - Metadata"
     group_label: "Database IDs"
-    label: "Client ID [Arch_Client_Orgs]"
+    label: "Client ID"
     description: "ID for Primary BC360 Client Account"
 
     hidden: no
@@ -32,11 +30,26 @@ view: arch_clients_admin {
     sql: ${TABLE}.client_id ;;
   }
 
+  dimension: organization_id {
+    view_label: "Z - Metadata"
+    group_label: "Database IDs"
+    label: "Organization ID [Arch_Clients]"
+    description: "ID for Organization Within MP360 Client Account"
+
+    primary_key: yes
+    hidden: no
+
+    type: string
+
+    sql: ${TABLE}.organization_id ;;
+  }
+
+
   dimension: client_uid {
     view_label: "Z - Metadata"
     group_label: "Database IDs"
-    label: "Client UID [Arch_Client_Orgs]"
-    description: "Hashed UID for Primary BC360 Client Account"
+    label: "Client ID"
+    description: "UID for Primary BC360 Client Account"
 
     hidden: no
 
@@ -45,26 +58,13 @@ view: arch_clients_admin {
     sql: ${TABLE}.client_uid ;;
   }
 
-  dimension: organization_id {
-    view_label: "Z - Metadata"
-    group_label: "Database IDs"
-    label: "Organization ID [Arch_Client_Orgs]"
-    description: "ID for Organization Within MP360 Client Account"
-
-    hidden: no
-
-    type: string
-
-    sql: ${TABLE}.organization_id ;;
-  }
-
   dimension: organization_uid {
     view_label: "Z - Metadata"
     group_label: "Database IDs"
-    label: "Organization UID [Arch_Client_Orgs]"
-    description: "Hashed UID for Organization Within MP360 Client Account"
+    label: "Organization ID [Arch_Clients]"
+    description: "UID for Organization Within MP360 Client Account"
 
-    # primary_key: yes
+    primary_key: no
     hidden: no
 
     type: string
@@ -72,6 +72,35 @@ view: arch_clients_admin {
     sql: ${TABLE}.organization_uid ;;
   }
 
+
+  ##########  DIMENSIONS  ##########
+
+  dimension: client {
+    view_label: "1. Client/Account"
+    label: "Client Account"
+    description: "Primary BC360 Client Account"
+
+    type: string
+    sql: ${TABLE}.client ;;
+  }
+
+  dimension: organization {
+    view_label: "1. Client/Account"
+    label: "Client Organization"
+    description: "Internal Organization Within BC360 Client Account"
+
+    type: string
+    sql: ${TABLE}.organization ;;
+  }
+
+  dimension: org_short {
+    view_label: "1. Client/Account"
+    label: "Client Org"
+    description: "Short Name for Internal Organization"
+
+    type: string
+    sql: ${TABLE}.org_short ;;
+  }
 
   ##########  MEASURES  ##########
   measure: num_clients {
@@ -95,4 +124,6 @@ view: arch_clients_admin {
 
     sql: ${organization_id} ;;
   }
+
+
 }
