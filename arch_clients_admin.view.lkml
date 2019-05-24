@@ -12,7 +12,7 @@ view: arch_clients_admin {
            ac.client,
            ac.organization,
            ac.org_short
-         FROM flat_arch.flat_clients_base ac;;
+         FROM arch_clients.arch_clients_base ac;;
   }
 
 ##########  METADATA  ##########
