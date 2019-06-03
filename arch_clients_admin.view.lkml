@@ -4,7 +4,7 @@ view: arch_clients_admin {
   # sql_table_name: bc360_arch_clients.arch_clients ;;
 
   derived_table: {
-    # datagroup_trigger: dg_bc360_bq
+    datagroup_trigger: dg_bc360_clients
 
     sql:  SELECT
            ac.client_id,
