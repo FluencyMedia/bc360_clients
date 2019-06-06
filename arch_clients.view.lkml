@@ -6,21 +6,11 @@ view: arch_clients {
 
   extends: [arch_clients_admin]
 
-  dimension: client_id {
-    hidden: yes
-  }
+  dimension: client_id { hidden: yes }
+  dimension: organization_id { hidden: yes }
+  dimension: client_uid { hidden: yes }
+  dimension: organization_uid { hidden: yes }
 
-  dimension: organization_id {
-    hidden: yes
-  }
-
-
-  dimension: client_uid {
-    hidden: yes
-  }
-
-  dimension: organization_uid {
-    hidden: yes
-  }
-
+  measure: num_clients { hidden: yes }
+  measure: num_orgs { hidden: yes }
 }
