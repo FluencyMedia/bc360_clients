@@ -1,17 +1,15 @@
 view: arch_clients_admin {
   view_label: "Client Architecture"
 
-  # sql_table_name: bc360_arch_clients.arch_clients ;;
-
   derived_table: {
     datagroup_trigger: dg_bc360_clients
 
     sql:  SELECT
-           ac.client_id,
-           ac.organization_id,
-           ac.client,
-           ac.organization,
-           ac.org_short
+            ac.client_id,
+            ac.organization_id,
+            ac.client,
+            ac.organization,
+            ac.org_short
          FROM arch_clients.arch_clients_base ac;;
   }
 

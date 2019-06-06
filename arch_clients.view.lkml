@@ -7,7 +7,8 @@ view: arch_clients {
   extends: [arch_clients_admin]
 
   dimension: client_id { hidden: yes }
-  dimension: organization_id { hidden: yes }
+  dimension: organization_id {  hidden: yes
+                                primary_key: yes }
   dimension: client_uid { hidden: yes }
   dimension: organization_uid { hidden: yes }
 
