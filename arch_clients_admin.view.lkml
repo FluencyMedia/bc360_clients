@@ -22,7 +22,6 @@ view: arch_clients_admin {
     description: "ID for Primary BC360 Client Account"
 
     hidden: yes
-
     type: string
 
     sql: ${TABLE}.client_id ;;
@@ -35,7 +34,7 @@ view: arch_clients_admin {
     description: "ID for Organization Within MP360 Client Account"
 
     primary_key: yes
-    hidden: no
+    hidden: yes
     type: string
 
     sql: ${TABLE}.organization_id ;;
@@ -94,6 +93,7 @@ view: arch_clients_admin {
     label: "Client Org"
     description: "Short Name for Internal Organization"
 
+    hidden: yes
     type: string
     sql: ${TABLE}.org_short ;;
   }
