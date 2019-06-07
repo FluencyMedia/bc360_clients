@@ -21,7 +21,7 @@ view: arch_clients_admin {
     label: "Client ID"
     description: "ID for Primary BC360 Client Account"
 
-    hidden: no
+    hidden: yes
 
     type: string
 
@@ -36,7 +36,6 @@ view: arch_clients_admin {
 
     primary_key: yes
     hidden: no
-
     type: string
 
     sql: ${TABLE}.organization_id ;;
@@ -49,8 +48,7 @@ view: arch_clients_admin {
     label: "Client ID"
     description: "UID for Primary BC360 Client Account"
 
-    hidden: no
-
+    hidden: yes
     type: string
 
     sql: ${TABLE}.client_uid ;;
@@ -62,9 +60,7 @@ view: arch_clients_admin {
     label: "Organization ID [Arch_Clients]"
     description: "UID for Organization Within MP360 Client Account"
 
-    primary_key: no
-    hidden: no
-
+    hidden: yes
     type: string
 
     sql: ${TABLE}.organization_uid ;;
@@ -78,6 +74,7 @@ view: arch_clients_admin {
     label: "Client Account"
     description: "Primary BC360 Client Account"
 
+    hidden: yes
     type: string
     sql: ${TABLE}.client ;;
   }
@@ -87,6 +84,7 @@ view: arch_clients_admin {
     label: "Client Organization"
     description: "Internal Organization Within BC360 Client Account"
 
+    hidden: yes
     type: string
     sql: ${TABLE}.organization ;;
   }
@@ -106,6 +104,8 @@ view: arch_clients_admin {
     group_label: "Z - Category Counts"
     label: "# Clients"
     description: "Number of BC360 Client Accounts"
+
+    hidden: yes
     type: count_distinct
     value_format_name: decimal_0
 
@@ -117,6 +117,8 @@ view: arch_clients_admin {
     group_label: "Z - Category Counts"
     label: "# Organizations"
     description: "Number of BC360 Client Organizations"
+
+    hidden: yes
     type: count_distinct
     value_format_name: decimal_0
 
