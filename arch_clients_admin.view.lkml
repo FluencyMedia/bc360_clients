@@ -73,7 +73,7 @@ view: arch_clients_admin {
     label: "Client Account"
     description: "Primary BC360 Client Account"
 
-    hidden: yes
+    hidden: no
     type: string
     sql: ${TABLE}.client ;;
   }
@@ -83,7 +83,7 @@ view: arch_clients_admin {
     label: "Client Organization"
     description: "Internal Organization Within BC360 Client Account"
 
-    hidden: yes
+    hidden: no
     type: string
     sql: ${TABLE}.organization ;;
   }
@@ -93,7 +93,7 @@ view: arch_clients_admin {
     label: "Client Org"
     description: "Short Name for Internal Organization"
 
-    hidden: yes
+    hidden: no
     type: string
     sql: ${TABLE}.org_short ;;
   }
