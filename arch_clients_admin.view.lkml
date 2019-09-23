@@ -34,7 +34,7 @@ view: arch_clients_admin {
     description: "ID for Organization Within MP360 Client Account"
 
     primary_key: yes
-    hidden: yes
+    hidden: no
     type: string
 
     sql: ${TABLE}.organization_id ;;
